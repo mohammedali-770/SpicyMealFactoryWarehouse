@@ -1,0 +1,42 @@
+{
+  "app": { "name": "Spicy Meal Factory" },
+  "common": {
+    "loading": "Loading…",
+    "signOut": "Sign out",
+    "error": "Something went wrong"
+  },
+  "lang": { "toggle": "العربية", "label": "Switch language" },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "invalid": "Invalid email or password",
+      "emailRequired": "Enter a valid email address",
+      "passwordRequired": "Password must be at least 8 characters"
+    }
+  },
+  "dashboard": {
+    "admin": { "title": "Admin Dashboard", "empty": "No content yet — Phase 1 foundation." },
+    "customer": { "title": "Customer Dashboard", "empty": "No content yet — Phase 1 foundation." },
+    "warehouse_manager": {
+      "title": "Warehouse Manager Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    },
+    "factory_manager": {
+      "title": "Factory Manager Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    },
+    "general_manager": {
+      "title": "General Manager Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    },
+    "accountant": {
+      "title": "Accountant Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    }
+  },
+  "notFound": { "title": "Page not found", "back": "Back to dashboard" }
+}
