@@ -4,6 +4,10 @@ import { z } from 'zod'
 export const envSchema = z.object({
   VITE_SUPABASE_URL: z.string().url(),
   VITE_SUPABASE_ANON_KEY: z.string().min(20),
+  // Optional override for the edge-functions base URL. Defaults to
+  // `${VITE_SUPABASE_URL}/functions/v1`. Useful locally to point at a function
+  // run directly via `deno run` when the edge_runtime container is unavailable.
+  VITE_FUNCTIONS_BASE_URL: z.string().url().optional(),
 })
 
 export type Env = z.infer<typeof envSchema>

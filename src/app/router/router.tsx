@@ -1,11 +1,19 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { RequireAuth } from '@/app/router/RequireAuth'
 import { RoleGuard } from '@/app/router/RoleGuard'
 import { RoleHomeRedirect } from '@/app/router/RoleHomeRedirect'
 import { AppLayout } from '@/components/layout/AppLayout'
 import { NotFoundPage } from '@/components/layout/NotFoundPage'
 import { LoginPage } from '@/features/auth/LoginPage'
-import { AdminDashboard } from '@/features/dashboards/AdminDashboard'
+import { AdminLayout } from '@/features/admin/AdminLayout'
+import { ResourceScreen } from '@/features/admin/ResourceScreen'
+import { UsersScreen } from '@/features/admin/users/UsersScreen'
+import {
+  branchesConfig,
+  itemsConfig,
+  rawMaterialsConfig,
+  suppliersConfig,
+} from '@/features/admin/resources'
 import { CustomerDashboard } from '@/features/dashboards/CustomerDashboard'
 import { WarehouseDashboard } from '@/features/dashboards/WarehouseDashboard'
 import { FactoryDashboard } from '@/features/dashboards/FactoryDashboard'
@@ -27,9 +35,17 @@ export const router = createBrowserRouter([
         path: 'admin',
         element: (
           <RoleGuard allow={['admin']}>
-            <AdminDashboard />
+            <AdminLayout />
           </RoleGuard>
         ),
+        children: [
+          { index: true, element: <Navigate to="/admin/users" replace /> },
+          { path: 'users', element: <UsersScreen /> },
+          { path: 'branches', element: <ResourceScreen config={branchesConfig} /> },
+          { path: 'items', element: <ResourceScreen config={itemsConfig} /> },
+          { path: 'suppliers', element: <ResourceScreen config={suppliersConfig} /> },
+          { path: 'raw-materials', element: <ResourceScreen config={rawMaterialsConfig} /> },
+        ],
       },
       {
         path: 'customer',

@@ -3,7 +3,21 @@
   "common": {
     "loading": "جارٍ التحميل…",
     "signOut": "تسجيل الخروج",
-    "error": "حدث خطأ ما"
+    "error": "حدث خطأ ما",
+    "add": "إضافة",
+    "edit": "تعديل",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "actions": "إجراءات",
+    "status": "الحالة",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "activate": "تفعيل",
+    "deactivate": "تعطيل",
+    "showInactive": "إظهار غير النشط",
+    "empty": "لا يوجد شيء بعد",
+    "moveUp": "تحريك لأعلى",
+    "moveDown": "تحريك لأسفل"
   },
   "lang": { "toggle": "English", "label": "تغيير اللغة" },
   "auth": {
@@ -37,6 +51,77 @@
       "title": "لوحة المحاسب",
       "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى."
     }
+  },
+  "admin": {
+    "tabs": {
+      "users": "المستخدمون",
+      "branches": "الفروع",
+      "items": "الأصناف",
+      "suppliers": "الموردون",
+      "rawMaterials": "المواد الخام"
+    },
+    "fields": { "name": "الاسم", "nameAr": "الاسم (عربي)" },
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "number": "أدخل رقمًا",
+      "nonNegative": "يجب أن يكون صفرًا أو أكثر"
+    },
+    "roles": {
+      "admin": "مدير",
+      "customer": "عميل",
+      "warehouse_manager": "مدير المستودع",
+      "factory_manager": "مدير المصنع",
+      "general_manager": "المدير العام",
+      "accountant": "محاسب"
+    },
+    "users": {
+      "title": "المستخدمون",
+      "create": "إضافة مستخدم",
+      "edit": "تعديل مستخدم",
+      "passwordOptional": "اتركه فارغًا للإبقاء عليه",
+      "roleChangeNote": "تسري تغييرات الدور عند تسجيل دخول المستخدم في المرة التالية.",
+      "fields": {
+        "email": "البريد الإلكتروني",
+        "fullName": "الاسم الكامل",
+        "password": "كلمة المرور",
+        "role": "الدور",
+        "branch": "الفرع",
+        "active": "نشط"
+      },
+      "errors": {
+        "email": "أدخل بريدًا إلكترونيًا صالحًا",
+        "password": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+        "fullName": "الاسم الكامل مطلوب"
+      }
+    },
+    "branches": { "title": "الفروع", "fields": { "internalOnly": "داخلي فقط" } },
+    "items": {
+      "title": "الأصناف",
+      "export": "تصدير",
+      "import": "استيراد",
+      "importSummary": "تم استيراد {{ok}} صفًا، {{errors}} خطأ",
+      "imageUploading": "جارٍ رفع الصورة…",
+      "fields": {
+        "sku": "رمز الصنف",
+        "category": "الفئة",
+        "unit": "الوحدة",
+        "unitPrice": "سعر الوحدة",
+        "image": "الصورة",
+        "stockLevelRequired": "اطلب من العميل مستوى المخزون"
+      },
+      "category": { "warehouse": "مستودع", "factory": "مصنع" }
+    },
+    "suppliers": {
+      "title": "الموردون",
+      "fields": {
+        "contactName": "اسم جهة الاتصال",
+        "phone": "الهاتف",
+        "email": "البريد الإلكتروني",
+        "address": "العنوان",
+        "notes": "ملاحظات"
+      }
+    },
+    "rawMaterials": { "title": "المواد الخام", "fields": { "supplier": "المورد" } }
   },
   "notFound": { "title": "الصفحة غير موجودة", "back": "العودة إلى اللوحة" }
 }

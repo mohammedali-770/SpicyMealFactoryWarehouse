@@ -3,7 +3,21 @@
   "common": {
     "loading": "Loading…",
     "signOut": "Sign out",
-    "error": "Something went wrong"
+    "error": "Something went wrong",
+    "add": "Add",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "actions": "Actions",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "showInactive": "Show inactive",
+    "empty": "Nothing here yet",
+    "moveUp": "Move up",
+    "moveDown": "Move down"
   },
   "lang": { "toggle": "العربية", "label": "Switch language" },
   "auth": {
@@ -37,6 +51,77 @@
       "title": "Accountant Dashboard",
       "empty": "No content yet — Phase 1 foundation."
     }
+  },
+  "admin": {
+    "tabs": {
+      "users": "Users",
+      "branches": "Branches",
+      "items": "Items",
+      "suppliers": "Suppliers",
+      "rawMaterials": "Raw Materials"
+    },
+    "fields": { "name": "Name", "nameAr": "Name (Arabic)" },
+    "errors": {
+      "required": "This field is required",
+      "number": "Enter a number",
+      "nonNegative": "Must be zero or more"
+    },
+    "roles": {
+      "admin": "Admin",
+      "customer": "Customer",
+      "warehouse_manager": "Warehouse Manager",
+      "factory_manager": "Factory Manager",
+      "general_manager": "General Manager",
+      "accountant": "Accountant"
+    },
+    "users": {
+      "title": "Users",
+      "create": "Add user",
+      "edit": "Edit user",
+      "passwordOptional": "leave blank to keep",
+      "roleChangeNote": "Role changes take effect the next time the user signs in.",
+      "fields": {
+        "email": "Email",
+        "fullName": "Full name",
+        "password": "Password",
+        "role": "Role",
+        "branch": "Branch",
+        "active": "Active"
+      },
+      "errors": {
+        "email": "Enter a valid email address",
+        "password": "Password must be at least 6 characters",
+        "fullName": "Full name is required"
+      }
+    },
+    "branches": { "title": "Branches", "fields": { "internalOnly": "Internal only" } },
+    "items": {
+      "title": "Items",
+      "export": "Export",
+      "import": "Import",
+      "importSummary": "Imported {{ok}} row(s), {{errors}} error(s)",
+      "imageUploading": "Uploading image…",
+      "fields": {
+        "sku": "SKU",
+        "category": "Category",
+        "unit": "Unit",
+        "unitPrice": "Unit price",
+        "image": "Image",
+        "stockLevelRequired": "Ask customer for stock level"
+      },
+      "category": { "warehouse": "Warehouse", "factory": "Factory" }
+    },
+    "suppliers": {
+      "title": "Suppliers",
+      "fields": {
+        "contactName": "Contact name",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "notes": "Notes"
+      }
+    },
+    "rawMaterials": { "title": "Raw Materials", "fields": { "supplier": "Supplier" } }
   },
   "notFound": { "title": "Page not found", "back": "Back to dashboard" }
 }

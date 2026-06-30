@@ -39,3 +39,28 @@ $$;
 
 -- Allow the test runner (current role) to SET ROLE into these for RLS tests.
 grant anon, authenticated, service_role to current_user;
+
+-- Minimal `storage` schema shim so the item-images storage migration applies in
+-- plain-Postgres CI (Supabase provides the real storage schema natively).
+create schema if not exists storage;
+
+create table if not exists storage.buckets (
+  id                 text primary key,
+  name               text,
+  public             boolean not null default false,
+  file_size_limit    bigint,
+  allowed_mime_types text[],
+  created_at         timestamptz not null default now()
+);
+
+create table if not exists storage.objects (
+  id         uuid primary key default gen_random_uuid(),
+  bucket_id  text references storage.buckets (id),
+  name       text,
+  owner      uuid,
+  created_at timestamptz not null default now()
+);
+alter table storage.objects enable row level security;
+
+grant usage on schema storage to anon, authenticated;
+grant select, insert, update, delete on storage.buckets, storage.objects to anon, authenticated;
