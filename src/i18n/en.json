@@ -174,5 +174,24 @@
       "lineCount": "{{n}} item(s) selected"
     }
   },
+  "nav": { "orders": "Orders", "inventory": "Inventory", "admin": "Admin" },
+  "inventory": {
+    "title": "Inventory",
+    "empty": "No warehouse items yet",
+    "fields": { "sku": "SKU", "item": "Item", "unit": "Unit", "onHand": "On hand" },
+    "adjust": {
+      "title": "Adjust stock",
+      "current": "On hand",
+      "quantity": "Quantity",
+      "note": "Note",
+      "submit": "Apply"
+    },
+    "movements": { "title": "Movements", "empty": "No movements yet" },
+    "reason": {
+      "order_fulfillment": "Order fulfillment",
+      "adjustment": "Adjustment",
+      "purchase_receipt": "Purchase receipt"
+    }
+  },
   "notFound": { "title": "Page not found", "back": "Back to dashboard" }
 }
