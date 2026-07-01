@@ -178,6 +178,7 @@
     "orders": "Orders",
     "inventory": "Inventory",
     "purchasing": "Purchasing",
+    "production": "Production",
     "admin": "Admin"
   },
   "inventory": {
@@ -197,7 +198,37 @@
     "reason": {
       "order_fulfillment": "Order fulfillment",
       "adjustment": "Adjustment",
-      "purchase_receipt": "Purchase receipt"
+      "purchase_receipt": "Purchase receipt",
+      "production": "Production"
+    }
+  },
+  "production": {
+    "title": "Production",
+    "empty": "No batches yet",
+    "status": {
+      "pending": "Pending",
+      "in_progress": "In progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "actions": { "in_progress": "Start", "completed": "Complete", "cancelled": "Cancel" },
+    "filter": { "all": "All" },
+    "fields": { "number": "Batch #", "date": "Date", "inputs": "Inputs", "outputs": "Outputs" },
+    "detail": {
+      "title": "Batch",
+      "item": "Item",
+      "quantity": "Qty",
+      "inputs": "Consumes (raw materials)",
+      "outputs": "Produces (items)",
+      "notes": "Notes"
+    },
+    "new": {
+      "title": "New Batch",
+      "inputs": "Consume raw materials",
+      "outputs": "Produce items",
+      "notes": "Notes",
+      "submit": "Create batch",
+      "summary": "{{inputs}} input(s), {{outputs}} output(s)"
     }
   },
   "purchasing": {

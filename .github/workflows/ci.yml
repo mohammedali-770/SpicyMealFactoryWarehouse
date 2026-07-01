@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
 
   database:
-    name: pgTAP (orders RLS + ordering RPCs + inventory + purchasing)
+    name: pgTAP (orders RLS + ordering RPCs + inventory + purchasing + production)
     runs-on: ubuntu-latest
     services:
       postgres:

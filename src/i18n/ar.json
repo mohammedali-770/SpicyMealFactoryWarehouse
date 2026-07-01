@@ -178,6 +178,7 @@
     "orders": "الطلبات",
     "inventory": "المخزون",
     "purchasing": "المشتريات",
+    "production": "الإنتاج",
     "admin": "الإدارة"
   },
   "inventory": {
@@ -197,7 +198,42 @@
     "reason": {
       "order_fulfillment": "تنفيذ طلب",
       "adjustment": "تعديل",
-      "purchase_receipt": "استلام مشتريات"
+      "purchase_receipt": "استلام مشتريات",
+      "production": "إنتاج"
+    }
+  },
+  "production": {
+    "title": "الإنتاج",
+    "empty": "لا توجد دفعات بعد",
+    "status": {
+      "pending": "قيد الانتظار",
+      "in_progress": "قيد التنفيذ",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "actions": { "in_progress": "بدء", "completed": "إكمال", "cancelled": "إلغاء" },
+    "filter": { "all": "الكل" },
+    "fields": {
+      "number": "رقم الدفعة",
+      "date": "التاريخ",
+      "inputs": "المدخلات",
+      "outputs": "المخرجات"
+    },
+    "detail": {
+      "title": "الدفعة",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "inputs": "يستهلك (مواد خام)",
+      "outputs": "ينتج (أصناف)",
+      "notes": "ملاحظات"
+    },
+    "new": {
+      "title": "دفعة جديدة",
+      "inputs": "استهلاك مواد خام",
+      "outputs": "إنتاج أصناف",
+      "notes": "ملاحظات",
+      "submit": "إنشاء الدفعة",
+      "summary": "{{inputs}} مدخل، {{outputs}} مخرج"
     }
   },
   "purchasing": {
