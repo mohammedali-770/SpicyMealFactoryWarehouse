@@ -24,17 +24,8 @@ jobs:
   database:
     name: pgTAP (orders RLS + ordering RPCs + inventory + purchasing + production + reporting)
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:16
-        env:
-          POSTGRES_PASSWORD: postgres
-        ports: ['5432:5432']
-        options: >-
-          --health-cmd "pg_isready -U postgres"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
+    # Postgres runs on the runner (not a service container) so pgTAP — which must live
+    # inside the same server as the database — is available to `create extension pgtap`.
     env:
       PGHOST: localhost
       PGPORT: '5432'
@@ -43,10 +34,19 @@ jobs:
       PGDATABASE: postgres
     steps:
       - uses: actions/checkout@v4
-      - name: Install pgTAP + pg_prove
+      - name: Install PostgreSQL 16 + pgTAP + pg_prove
         run: |
           sudo apt-get update
-          sudo apt-get install -y postgresql-16-pgtap libtap-parser-sourcehandler-pgtap-perl postgresql-client-16
+          sudo apt-get install -y \
+            postgresql-16 postgresql-16-pgtap postgresql-client-16 \
+            libtap-parser-sourcehandler-pgtap-perl
+      - name: Start a fresh PostgreSQL 16 cluster on port 5432
+        run: |
+          sudo pg_dropcluster --stop 16 main || true
+          sudo pg_createcluster 16 main --port 5432 -- --auth-local=trust --auth-host=scram-sha-256
+          sudo pg_ctlcluster 16 main start
+          sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+          for i in $(seq 1 30); do pg_isready -h localhost -p 5432 && break; sleep 1; done
       - name: Bootstrap auth shims (CI only)
         run: psql -v ON_ERROR_STOP=1 -f supabase/ci/bootstrap.sql
       - name: Apply migrations in order

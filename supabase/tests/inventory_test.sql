@@ -3,7 +3,7 @@
 -- The mutating paths are SECURITY DEFINER and self-enforce authorization from the JWT
 -- claims, which we set per assertion.
 begin;
-select plan(16);
+select plan(18);
 
 -- ---- Fixtures (run as the migration owner; RLS is bypassed for setup) ----
 insert into auth.users (id, email, raw_app_meta_data) values

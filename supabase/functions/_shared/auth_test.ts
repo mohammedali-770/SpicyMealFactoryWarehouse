@@ -7,10 +7,8 @@ function postWith(token?: string): Request {
   return new Request('http://localhost', { method: 'POST', headers })
 }
 
-const userWithRole =
-  (role: string | null): GetUser =>
-  () =>
-    Promise.resolve({ id: 'u1', email: 'u@x.test', role })
+const userWithRole = (role: string | null): GetUser => () =>
+  Promise.resolve({ id: 'u1', email: 'u@x.test', role })
 
 Deno.test('requireAdmin: missing token -> 401', async () => {
   const err = await assertRejects(() => requireAdmin(postWith(), userWithRole('admin')), AuthError)

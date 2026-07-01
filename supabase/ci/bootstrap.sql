@@ -40,6 +40,10 @@ $$;
 -- Allow the test runner (current role) to SET ROLE into these for RLS tests.
 grant anon, authenticated, service_role to current_user;
 
+-- Supabase grants these natively; the shim must too, or jwt_role()/RLS policies fail with
+-- "permission denied for schema auth" once a test does `set role authenticated`.
+grant usage on schema auth to anon, authenticated, service_role;
+
 -- Minimal `storage` schema shim so the item-images storage migration applies in
 -- plain-Postgres CI (Supabase provides the real storage schema natively).
 create schema if not exists storage;
