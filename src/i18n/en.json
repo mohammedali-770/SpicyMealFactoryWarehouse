@@ -179,6 +179,7 @@
     "inventory": "Inventory",
     "purchasing": "Purchasing",
     "production": "Production",
+    "reports": "Reports",
     "admin": "Admin"
   },
   "inventory": {
@@ -269,6 +270,35 @@
       "notes": "Notes",
       "submit": "Create PO",
       "lineCount": "{{n}} item(s) selected"
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "from": "From",
+    "to": "To",
+    "export": "Export CSV",
+    "empty": "No data for this range",
+    "total": "Total",
+    "note": "Valuation uses current on-hand × catalog unit price. Sales counts approved and completed orders; purchases count received POs.",
+    "sales": { "title": "Sales" },
+    "purchases": { "title": "Purchases" },
+    "production": { "title": "Production" },
+    "itemValuation": { "title": "Item valuation" },
+    "rawValuation": { "title": "Raw material valuation" },
+    "fields": {
+      "day": "Day",
+      "category": "Category",
+      "orders": "Orders",
+      "revenue": "Revenue",
+      "kind": "Kind",
+      "pos": "POs",
+      "spend": "Spend",
+      "batches": "Batches",
+      "output": "Output",
+      "item": "Item",
+      "onHand": "On hand",
+      "unitPrice": "Unit price",
+      "value": "Value"
     }
   },
   "notFound": { "title": "Page not found", "back": "Back to dashboard" }

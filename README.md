@@ -4,16 +4,17 @@ Multi-role order & inventory management system for a food-production/distributio
 Server-authoritative architecture (Supabase Postgres + Auth + Edge Functions + Storage) with a
 React 19 + TypeScript front end.
 
-> **Status: Phase 6 (Production batches).** Built so far: the Phase 1 foundation, Phase 2 master
-> data & admin, the Phase 3 ordering core (`create_customer_order` split, `set_order_status` with a
-> **price snapshot at approval**), the Phase 4 inventory ledger (`stock_movements` + `item_stock`,
-> `adjust_item_stock`, fulfillment movements), and Phase 5 purchase orders (WPO/RPO create → approve
-> → **received**, receipts posting into the item and `raw_material_movements` ledgers) **plus**
-> production batches: `create_production_batch` plans a batch of raw-material inputs and
-> warehouse-item outputs, and the guarded `set_batch_status` gate drives pending → in_progress →
-> **completed**, where completion atomically **consumes** raw materials and **produces** warehouse
-> items — closing the loop raw materials → production → sellable stock across both ledgers. A
-> Production screen serves factory/GM/admin. Later phases (reporting) are scoped but **not** built yet.
+> **Status: Phase 7 (Reporting) — scoped build complete.** Built so far: the Phase 1 foundation,
+> Phase 2 master data & admin, the Phase 3 ordering core (`create_customer_order` split,
+> `set_order_status` with a **price snapshot at approval**), the Phase 4 inventory ledger
+> (`stock_movements` + `item_stock`, `adjust_item_stock`, fulfillment movements), Phase 5 purchase
+> orders (WPO/RPO create → approve → received, receipts posting into the item and
+> `raw_material_movements` ledgers), and Phase 6 production batches (consume raw materials → produce
+> warehouse items, closing the loop across both ledgers) **plus** reporting: role-guarded
+> `security_invoker` views for daily **sales**, **purchase spend**, **production output**, and
+> current **inventory valuation** (items + raw materials), surfaced on a Reports screen with a
+> date-range filter and CSV export for accountant/GM/admin. The full operational spine — master data
+> → orders → inventory → purchasing → production → reporting — is now in place.
 
 ## Tech stack
 
@@ -137,7 +138,8 @@ All share the password `Passw0rd!`:
   the ordering RPCs (cart → warehouse/factory split, transition authorization, price snapshot on approval),
   the inventory ledger (stock adjustments, authorization, fulfillment movements on completion),
   purchasing (WPO/RPO authority, cost capture, receipts posting into the item and raw-material ledgers),
-  and production (batch authority/validation, completion consuming raw materials and producing items).
+  production (batch authority/validation, completion consuming raw materials and producing items),
+  and reporting (sales/spend/output/valuation aggregates end-to-end, plus the non-reporting-role guard).
   ```bash
   npm run db:test
   ```
@@ -163,14 +165,14 @@ All share the password `Passw0rd!`:
 ```
 src/
   app/          providers (Query/Auth/I18n) + router (RequireAuth, RoleGuard)
-  features/     auth, admin, orders, inventory, purchasing (POs), production (batches), dashboards
+  features/     auth, admin, orders, inventory, purchasing, production, reports, dashboards
   components/   layout shell + token-driven UI primitives
   lib/          env, supabase client, currency, datetime, constants
   i18n/         en/ar resources + i18next init
 supabase/
   migrations/   ordered, idempotent SQL (schema + RLS + JWT roles + ordering RPCs)
   functions/    Deno edge functions (admin user management)
-  tests/        pgTAP suites (orders RLS, ordering RPCs, inventory, purchasing, production)
+  tests/        pgTAP suites (orders RLS, ordering RPCs, inventory, purchasing, production, reporting)
   ci/           CI-only auth shims for plain-Postgres pgTAP
   scripts/      seed-users.mjs
 tests/          Vitest unit tests
