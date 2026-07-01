@@ -13,19 +13,26 @@ export const roleNav: Record<Role, NavLink[]> = {
   admin: [
     { to: '/admin', labelKey: 'nav.admin' },
     { to: '/inventory', labelKey: 'nav.inventory' },
+    { to: '/purchasing', labelKey: 'nav.purchasing' },
   ],
   customer: [{ to: '/customer', labelKey: 'nav.orders' }],
   warehouse_manager: [
     { to: '/warehouse', labelKey: 'nav.orders' },
     { to: '/inventory', labelKey: 'nav.inventory' },
+    { to: '/purchasing', labelKey: 'nav.purchasing' },
   ],
-  factory_manager: [{ to: '/factory', labelKey: 'nav.orders' }],
+  factory_manager: [
+    { to: '/factory', labelKey: 'nav.orders' },
+    { to: '/purchasing', labelKey: 'nav.purchasing' },
+  ],
   general_manager: [
     { to: '/gm', labelKey: 'nav.orders' },
     { to: '/inventory', labelKey: 'nav.inventory' },
+    { to: '/purchasing', labelKey: 'nav.purchasing' },
   ],
   accountant: [
     { to: '/accountant', labelKey: 'nav.orders' },
     { to: '/inventory', labelKey: 'nav.inventory' },
+    { to: '/purchasing', labelKey: 'nav.purchasing' },
   ],
 }

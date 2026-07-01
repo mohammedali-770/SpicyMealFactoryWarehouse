@@ -15,6 +15,7 @@ import {
   suppliersConfig,
 } from '@/features/admin/resources'
 import { InventoryScreen } from '@/features/inventory/InventoryScreen'
+import { PurchasingScreen } from '@/features/purchasing/PurchasingScreen'
 import { CustomerDashboard } from '@/features/dashboards/CustomerDashboard'
 import { WarehouseDashboard } from '@/features/dashboards/WarehouseDashboard'
 import { FactoryDashboard } from '@/features/dashboards/FactoryDashboard'
@@ -93,6 +94,22 @@ export const router = createBrowserRouter([
         element: (
           <RoleGuard allow={['admin', 'warehouse_manager', 'general_manager', 'accountant']}>
             <InventoryScreen />
+          </RoleGuard>
+        ),
+      },
+      {
+        path: 'purchasing',
+        element: (
+          <RoleGuard
+            allow={[
+              'admin',
+              'warehouse_manager',
+              'factory_manager',
+              'general_manager',
+              'accountant',
+            ]}
+          >
+            <PurchasingScreen />
           </RoleGuard>
         ),
       },

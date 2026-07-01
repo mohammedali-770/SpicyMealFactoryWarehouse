@@ -174,10 +174,17 @@
       "lineCount": "{{n}} item(s) selected"
     }
   },
-  "nav": { "orders": "Orders", "inventory": "Inventory", "admin": "Admin" },
+  "nav": {
+    "orders": "Orders",
+    "inventory": "Inventory",
+    "purchasing": "Purchasing",
+    "admin": "Admin"
+  },
   "inventory": {
     "title": "Inventory",
     "empty": "No warehouse items yet",
+    "emptyRaw": "No raw materials yet",
+    "tabs": { "items": "Items", "raw": "Raw materials" },
     "fields": { "sku": "SKU", "item": "Item", "unit": "Unit", "onHand": "On hand" },
     "adjust": {
       "title": "Adjust stock",
@@ -191,6 +198,46 @@
       "order_fulfillment": "Order fulfillment",
       "adjustment": "Adjustment",
       "purchase_receipt": "Purchase receipt"
+    }
+  },
+  "purchasing": {
+    "title": "Purchase Orders",
+    "empty": "No purchase orders yet",
+    "kind": { "warehouse": "Warehouse", "raw_material": "Raw material" },
+    "status": {
+      "draft": "Draft",
+      "pending": "Pending",
+      "approved": "Approved",
+      "received": "Received",
+      "cancelled": "Cancelled"
+    },
+    "actions": { "approved": "Approve", "received": "Receive", "cancelled": "Cancel" },
+    "filter": { "all": "All", "allKinds": "All kinds" },
+    "fields": {
+      "number": "PO #",
+      "kind": "Kind",
+      "date": "Date",
+      "supplier": "Supplier",
+      "items": "Items",
+      "total": "Total"
+    },
+    "detail": {
+      "title": "Purchase order",
+      "item": "Item",
+      "quantity": "Qty",
+      "unitPrice": "Unit cost",
+      "lineTotal": "Line total",
+      "total": "Total",
+      "notes": "Notes"
+    },
+    "new": {
+      "title": "New PO",
+      "kind": "Kind",
+      "supplier": "Supplier",
+      "selectSupplier": "Select a supplier",
+      "notes": "Notes",
+      "submit": "Create PO",
+      "lineCount": "{{n}} item(s) selected"
     }
   },
   "notFound": { "title": "Page not found", "back": "Back to dashboard" }

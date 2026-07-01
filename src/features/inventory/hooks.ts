@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { supabase } from '@/lib/supabase'
-import type { StockLevel, StockMovement } from './types'
+import type { RawMaterialLevel, StockLevel, StockMovement } from './types'
 
 const INVENTORY_KEY = ['inventory']
 
@@ -15,6 +15,21 @@ export function useStockLevels() {
         .order('name')
       if (error) throw new Error(error.message)
       return (data ?? []) as StockLevel[]
+    },
+  })
+}
+
+/** On-hand levels for every raw material (RLS-scoped), by name. */
+export function useRawMaterialLevels() {
+  return useQuery({
+    queryKey: [...INVENTORY_KEY, 'raw-levels'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('raw_material_stock')
+        .select('raw_material_id, name, name_ar, unit, on_hand')
+        .order('name')
+      if (error) throw new Error(error.message)
+      return (data ?? []) as RawMaterialLevel[]
     },
   })
 }

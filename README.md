@@ -4,16 +4,17 @@ Multi-role order & inventory management system for a food-production/distributio
 Server-authoritative architecture (Supabase Postgres + Auth + Edge Functions + Storage) with a
 React 19 + TypeScript front end.
 
-> **Status: Phase 4 (Inventory ledger).** Built so far: the Phase 1 foundation (local Supabase,
+> **Status: Phase 5 (Purchase orders).** Built so far: the Phase 1 foundation (local Supabase,
 > core schema + RLS + JWT role claim, auth, role-guarded routing, EN/AR + RTL, test harness), the
-> Phase 2 master data & admin (suppliers, raw materials, admin CRUD, item images, Excel, hardened
-> admin edge functions), and the Phase 3 ordering core (`create_customer_order` warehouse/factory
-> split, guarded `set_order_status` with a **price snapshot at approval**, shared per-role Orders
-> view) **plus** the inventory ledger: an append-only `stock_movements` ledger with a signed
-> quantity, on-hand balances via the `item_stock` view, an `adjust_item_stock` RPC for manual
-> corrections, automatic **fulfillment movements posted when a warehouse order is completed**, and an
-> Inventory screen for warehouse/GM/accountant. Later phases (purchase orders, daily operation,
-> reporting) are scoped but **not** built yet.
+> Phase 2 master data & admin, the Phase 3 ordering core (`create_customer_order` warehouse/factory
+> split, guarded `set_order_status` with a **price snapshot at approval**), and the Phase 4 inventory
+> ledger (`stock_movements` + `item_stock`, `adjust_item_stock`, fulfillment movements on
+> completion) **plus** purchase orders: `create_purchase_order` builds a WPO (warehouse items) or RPO
+> (raw materials) from a supplier with costs captured up front, the guarded `set_purchase_order_status`
+> gate drives pending → approved → **received**, and receiving posts `purchase_receipt` movements into
+> the item ledger (WPO) or the new `raw_material_movements` ledger (RPO). A Purchasing screen serves
+> warehouse/factory/GM/accountant, and Inventory now shows raw-material on-hand too. Later phases
+> (daily operation, reporting) are scoped but **not** built yet.
 
 ## Tech stack
 
@@ -135,7 +136,8 @@ All share the password `Passw0rd!`:
   ```
 - **Database (pgTAP):** `orders` Row Level Security (customer isolation, staff/admin read, insert rules),
   the ordering RPCs (cart → warehouse/factory split, transition authorization, price snapshot on approval),
-  and the inventory ledger (stock adjustments, authorization, fulfillment movements on completion).
+  the inventory ledger (stock adjustments, authorization, fulfillment movements on completion),
+  and purchasing (WPO/RPO authority, cost capture, receipts posting into the item and raw-material ledgers).
   ```bash
   npm run db:test
   ```
@@ -161,14 +163,14 @@ All share the password `Passw0rd!`:
 ```
 src/
   app/          providers (Query/Auth/I18n) + router (RequireAuth, RoleGuard)
-  features/     auth (login), admin (CRUD), orders (entry + lifecycle), inventory (ledger), dashboards
+  features/     auth, admin (CRUD), orders, inventory (ledger), purchasing (POs), dashboards
   components/   layout shell + token-driven UI primitives
   lib/          env, supabase client, currency, datetime, constants
   i18n/         en/ar resources + i18next init
 supabase/
   migrations/   ordered, idempotent SQL (schema + RLS + JWT roles + ordering RPCs)
   functions/    Deno edge functions (admin user management)
-  tests/        pgTAP suites (orders RLS, ordering RPCs, inventory ledger)
+  tests/        pgTAP suites (orders RLS, ordering RPCs, inventory ledger, purchasing)
   ci/           CI-only auth shims for plain-Postgres pgTAP
   scripts/      seed-users.mjs
 tests/          Vitest unit tests

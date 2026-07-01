@@ -174,10 +174,17 @@
       "lineCount": "تم اختيار {{n}} صنف"
     }
   },
-  "nav": { "orders": "الطلبات", "inventory": "المخزون", "admin": "الإدارة" },
+  "nav": {
+    "orders": "الطلبات",
+    "inventory": "المخزون",
+    "purchasing": "المشتريات",
+    "admin": "الإدارة"
+  },
   "inventory": {
     "title": "المخزون",
     "empty": "لا توجد أصناف مستودع بعد",
+    "emptyRaw": "لا توجد مواد خام بعد",
+    "tabs": { "items": "الأصناف", "raw": "المواد الخام" },
     "fields": { "sku": "الرمز", "item": "الصنف", "unit": "الوحدة", "onHand": "المتوفر" },
     "adjust": {
       "title": "تعديل المخزون",
@@ -191,6 +198,46 @@
       "order_fulfillment": "تنفيذ طلب",
       "adjustment": "تعديل",
       "purchase_receipt": "استلام مشتريات"
+    }
+  },
+  "purchasing": {
+    "title": "أوامر الشراء",
+    "empty": "لا توجد أوامر شراء بعد",
+    "kind": { "warehouse": "مستودع", "raw_material": "مواد خام" },
+    "status": {
+      "draft": "مسودة",
+      "pending": "قيد الانتظار",
+      "approved": "معتمد",
+      "received": "مستلم",
+      "cancelled": "ملغى"
+    },
+    "actions": { "approved": "اعتماد", "received": "استلام", "cancelled": "إلغاء" },
+    "filter": { "all": "الكل", "allKinds": "كل الأنواع" },
+    "fields": {
+      "number": "رقم الأمر",
+      "kind": "النوع",
+      "date": "التاريخ",
+      "supplier": "المورد",
+      "items": "الأصناف",
+      "total": "الإجمالي"
+    },
+    "detail": {
+      "title": "أمر شراء",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "unitPrice": "تكلفة الوحدة",
+      "lineTotal": "إجمالي السطر",
+      "total": "الإجمالي",
+      "notes": "ملاحظات"
+    },
+    "new": {
+      "title": "أمر شراء جديد",
+      "kind": "النوع",
+      "supplier": "المورد",
+      "selectSupplier": "اختر موردًا",
+      "notes": "ملاحظات",
+      "submit": "إنشاء الأمر",
+      "lineCount": "تم اختيار {{n}} صنف"
     }
   },
   "notFound": { "title": "الصفحة غير موجودة", "back": "العودة إلى اللوحة" }

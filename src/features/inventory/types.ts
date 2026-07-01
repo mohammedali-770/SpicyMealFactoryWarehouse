@@ -10,6 +10,14 @@ export interface StockLevel {
   on_hand: number
 }
 
+export interface RawMaterialLevel {
+  raw_material_id: string
+  name: string
+  name_ar: string | null
+  unit: string
+  on_hand: number
+}
+
 export interface StockMovement {
   id: string
   quantity: number
