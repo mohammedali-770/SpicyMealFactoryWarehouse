@@ -4,13 +4,15 @@ Multi-role order & inventory management system for a food-production/distributio
 Server-authoritative architecture (Supabase Postgres + Auth + Edge Functions + Storage) with a
 React 19 + TypeScript front end.
 
-> **Status: Phase 2 (Master data & admin).** Built so far: the Phase 1 foundation (local Supabase,
+> **Status: Phase 3 (Ordering core).** Built so far: the Phase 1 foundation (local Supabase,
 > core schema + RLS + JWT role claim, auth, role-guarded routing, EN/AR + RTL, test harness) **plus**
-> master-data tables (suppliers, raw materials), admin CRUD for users/branches/items/suppliers/raw
-> materials with soft-delete and reorder, item image upload (Storage), Excel import/export, and the
-> hardened admin edge functions (`admin-create-user` / `admin-update-user`, authz-gated). Later
-> phases (ordering RPCs, inventory ledger, POs, daily operation, reporting) are scoped but **not**
-> built yet.
+> the Phase 2 master data & admin (suppliers, raw materials, admin CRUD with soft-delete/reorder,
+> item image upload, Excel import/export, hardened admin edge functions) **plus** the ordering core:
+> the server-authoritative `create_customer_order` RPC (a customer cart is split atomically into one
+> warehouse and/or one factory order, each with its own generated number), the guarded
+> `set_order_status` state machine with a catalog **price snapshot captured at approval**, and a
+> shared per-role Orders view (customer order entry, manager approve/complete/cancel). Later phases
+> (inventory ledger, POs, daily operation, reporting) are scoped but **not** built yet.
 
 ## Tech stack
 
@@ -130,7 +132,8 @@ All share the password `Passw0rd!`:
   ```bash
   npm run test
   ```
-- **Database (pgTAP):** `orders` Row Level Security (customer isolation, staff/admin read, insert rules).
+- **Database (pgTAP):** `orders` Row Level Security (customer isolation, staff/admin read, insert rules)
+  and the ordering RPCs (cart → warehouse/factory split, transition authorization, price snapshot on approval).
   ```bash
   npm run db:test
   ```
@@ -156,13 +159,14 @@ All share the password `Passw0rd!`:
 ```
 src/
   app/          providers (Query/Auth/I18n) + router (RequireAuth, RoleGuard)
-  features/     auth (login), dashboards (per-role placeholders)
+  features/     auth (login), admin (CRUD), orders (entry + lifecycle), dashboards (per-role)
   components/   layout shell + token-driven UI primitives
   lib/          env, supabase client, currency, datetime, constants
   i18n/         en/ar resources + i18next init
 supabase/
-  migrations/   ordered, idempotent SQL (schema + RLS + JWT role plumbing)
-  tests/        pgTAP suites (orders RLS)
+  migrations/   ordered, idempotent SQL (schema + RLS + JWT roles + ordering RPCs)
+  functions/    Deno edge functions (admin user management)
+  tests/        pgTAP suites (orders RLS, ordering RPCs)
   ci/           CI-only auth shims for plain-Postgres pgTAP
   scripts/      seed-users.mjs
 tests/          Vitest unit tests

@@ -123,5 +123,56 @@
     },
     "rawMaterials": { "title": "المواد الخام", "fields": { "supplier": "المورد" } }
   },
+  "orders": {
+    "empty": "لا توجد طلبات بعد",
+    "title": {
+      "customer": "طلباتي",
+      "warehouse": "طلبات المستودع",
+      "factory": "طلبات المصنع",
+      "gm": "جميع الطلبات",
+      "accountant": "جميع الطلبات"
+    },
+    "status": {
+      "draft": "مسودة",
+      "pending": "قيد الانتظار",
+      "approved": "معتمد",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "actions": {
+      "pending": "إرسال",
+      "approved": "اعتماد",
+      "completed": "إكمال",
+      "cancelled": "إلغاء"
+    },
+    "filter": { "status": "الحالة", "all": "الكل" },
+    "fields": {
+      "number": "رقم الطلب",
+      "date": "التاريخ",
+      "branch": "الفرع",
+      "items": "الأصناف",
+      "total": "الإجمالي"
+    },
+    "detail": {
+      "title": "الطلب",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "stockLevel": "مستوى المخزون",
+      "unitPrice": "سعر الوحدة",
+      "lineTotal": "إجمالي السطر",
+      "total": "الإجمالي",
+      "notes": "ملاحظات",
+      "history": "السجل",
+      "notePlaceholder": "أضف ملاحظة (اختياري)"
+    },
+    "new": {
+      "title": "طلب جديد",
+      "branch": "الفرع",
+      "noBranch": "بدون فرع",
+      "notes": "ملاحظات",
+      "submit": "تقديم الطلب",
+      "lineCount": "تم اختيار {{n}} صنف"
+    }
+  },
   "notFound": { "title": "الصفحة غير موجودة", "back": "العودة إلى اللوحة" }
 }

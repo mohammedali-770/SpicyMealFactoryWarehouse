@@ -1,5 +1,7 @@
-import { DashboardPlaceholder } from '@/features/dashboards/DashboardPlaceholder'
+import { useTranslation } from 'react-i18next'
+import { OrdersView } from '@/features/orders/OrdersView'
 
 export function AccountantDashboard() {
-  return <DashboardPlaceholder role="accountant" />
+  const { t } = useTranslation()
+  return <OrdersView title={t('orders.title.accountant')} />
 }

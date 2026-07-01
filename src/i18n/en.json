@@ -123,5 +123,56 @@
     },
     "rawMaterials": { "title": "Raw Materials", "fields": { "supplier": "Supplier" } }
   },
+  "orders": {
+    "empty": "No orders yet",
+    "title": {
+      "customer": "My Orders",
+      "warehouse": "Warehouse Orders",
+      "factory": "Factory Orders",
+      "gm": "All Orders",
+      "accountant": "All Orders"
+    },
+    "status": {
+      "draft": "Draft",
+      "pending": "Pending",
+      "approved": "Approved",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "actions": {
+      "pending": "Submit",
+      "approved": "Approve",
+      "completed": "Complete",
+      "cancelled": "Cancel"
+    },
+    "filter": { "status": "Status", "all": "All" },
+    "fields": {
+      "number": "Order #",
+      "date": "Date",
+      "branch": "Branch",
+      "items": "Items",
+      "total": "Total"
+    },
+    "detail": {
+      "title": "Order",
+      "item": "Item",
+      "quantity": "Qty",
+      "stockLevel": "Stock level",
+      "unitPrice": "Unit price",
+      "lineTotal": "Line total",
+      "total": "Total",
+      "notes": "Notes",
+      "history": "History",
+      "notePlaceholder": "Add a note (optional)"
+    },
+    "new": {
+      "title": "New Order",
+      "branch": "Branch",
+      "noBranch": "No branch",
+      "notes": "Notes",
+      "submit": "Place order",
+      "lineCount": "{{n}} item(s) selected"
+    }
+  },
   "notFound": { "title": "Page not found", "back": "Back to dashboard" }
 }
