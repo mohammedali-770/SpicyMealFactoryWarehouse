@@ -1,0 +1,310 @@
+{
+  "app": { "name": "مصنع الوجبات الحارة" },
+  "common": {
+    "loading": "جارٍ التحميل…",
+    "signOut": "تسجيل الخروج",
+    "error": "حدث خطأ ما",
+    "add": "إضافة",
+    "edit": "تعديل",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "actions": "إجراءات",
+    "status": "الحالة",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "activate": "تفعيل",
+    "deactivate": "تعطيل",
+    "showInactive": "إظهار غير النشط",
+    "empty": "لا يوجد شيء بعد",
+    "moveUp": "تحريك لأعلى",
+    "moveDown": "تحريك لأسفل"
+  },
+  "lang": { "toggle": "English", "label": "تغيير اللغة" },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "تسجيل الدخول",
+      "submitting": "جارٍ تسجيل الدخول…",
+      "invalid": "بريد إلكتروني أو كلمة مرور غير صحيحة",
+      "emailRequired": "أدخل بريدًا إلكترونيًا صالحًا",
+      "passwordRequired": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل"
+    }
+  },
+  "dashboard": {
+    "admin": { "title": "لوحة المدير", "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى." },
+    "customer": { "title": "لوحة العميل", "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى." },
+    "warehouse_manager": {
+      "title": "لوحة مدير المستودع",
+      "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى."
+    },
+    "factory_manager": {
+      "title": "لوحة مدير المصنع",
+      "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى."
+    },
+    "general_manager": {
+      "title": "لوحة المدير العام",
+      "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى."
+    },
+    "accountant": {
+      "title": "لوحة المحاسب",
+      "empty": "لا يوجد محتوى بعد — أساس المرحلة الأولى."
+    }
+  },
+  "admin": {
+    "tabs": {
+      "users": "المستخدمون",
+      "branches": "الفروع",
+      "items": "الأصناف",
+      "suppliers": "الموردون",
+      "rawMaterials": "المواد الخام"
+    },
+    "fields": { "name": "الاسم", "nameAr": "الاسم (عربي)" },
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "number": "أدخل رقمًا",
+      "nonNegative": "يجب أن يكون صفرًا أو أكثر"
+    },
+    "roles": {
+      "admin": "مدير",
+      "customer": "عميل",
+      "warehouse_manager": "مدير المستودع",
+      "factory_manager": "مدير المصنع",
+      "general_manager": "المدير العام",
+      "accountant": "محاسب"
+    },
+    "users": {
+      "title": "المستخدمون",
+      "create": "إضافة مستخدم",
+      "edit": "تعديل مستخدم",
+      "passwordOptional": "اتركه فارغًا للإبقاء عليه",
+      "roleChangeNote": "تسري تغييرات الدور عند تسجيل دخول المستخدم في المرة التالية.",
+      "fields": {
+        "email": "البريد الإلكتروني",
+        "fullName": "الاسم الكامل",
+        "password": "كلمة المرور",
+        "role": "الدور",
+        "branch": "الفرع",
+        "active": "نشط"
+      },
+      "errors": {
+        "email": "أدخل بريدًا إلكترونيًا صالحًا",
+        "password": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+        "fullName": "الاسم الكامل مطلوب"
+      }
+    },
+    "branches": { "title": "الفروع", "fields": { "internalOnly": "داخلي فقط" } },
+    "items": {
+      "title": "الأصناف",
+      "export": "تصدير",
+      "import": "استيراد",
+      "importSummary": "تم استيراد {{ok}} صفًا، {{errors}} خطأ",
+      "imageUploading": "جارٍ رفع الصورة…",
+      "fields": {
+        "sku": "رمز الصنف",
+        "category": "الفئة",
+        "unit": "الوحدة",
+        "unitPrice": "سعر الوحدة",
+        "image": "الصورة",
+        "stockLevelRequired": "اطلب من العميل مستوى المخزون"
+      },
+      "category": { "warehouse": "مستودع", "factory": "مصنع" }
+    },
+    "suppliers": {
+      "title": "الموردون",
+      "fields": {
+        "contactName": "اسم جهة الاتصال",
+        "phone": "الهاتف",
+        "email": "البريد الإلكتروني",
+        "address": "العنوان",
+        "notes": "ملاحظات"
+      }
+    },
+    "rawMaterials": { "title": "المواد الخام", "fields": { "supplier": "المورد" } }
+  },
+  "orders": {
+    "empty": "لا توجد طلبات بعد",
+    "title": {
+      "customer": "طلباتي",
+      "warehouse": "طلبات المستودع",
+      "factory": "طلبات المصنع",
+      "gm": "جميع الطلبات",
+      "accountant": "جميع الطلبات"
+    },
+    "status": {
+      "draft": "مسودة",
+      "pending": "قيد الانتظار",
+      "approved": "معتمد",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "actions": {
+      "pending": "إرسال",
+      "approved": "اعتماد",
+      "completed": "إكمال",
+      "cancelled": "إلغاء"
+    },
+    "filter": { "status": "الحالة", "all": "الكل" },
+    "fields": {
+      "number": "رقم الطلب",
+      "date": "التاريخ",
+      "branch": "الفرع",
+      "items": "الأصناف",
+      "total": "الإجمالي"
+    },
+    "detail": {
+      "title": "الطلب",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "stockLevel": "مستوى المخزون",
+      "unitPrice": "سعر الوحدة",
+      "lineTotal": "إجمالي السطر",
+      "total": "الإجمالي",
+      "notes": "ملاحظات",
+      "history": "السجل",
+      "notePlaceholder": "أضف ملاحظة (اختياري)"
+    },
+    "new": {
+      "title": "طلب جديد",
+      "branch": "الفرع",
+      "noBranch": "بدون فرع",
+      "notes": "ملاحظات",
+      "submit": "تقديم الطلب",
+      "lineCount": "تم اختيار {{n}} صنف"
+    }
+  },
+  "nav": {
+    "orders": "الطلبات",
+    "inventory": "المخزون",
+    "purchasing": "المشتريات",
+    "production": "الإنتاج",
+    "reports": "التقارير",
+    "admin": "الإدارة"
+  },
+  "inventory": {
+    "title": "المخزون",
+    "empty": "لا توجد أصناف مستودع بعد",
+    "emptyRaw": "لا توجد مواد خام بعد",
+    "tabs": { "items": "الأصناف", "raw": "المواد الخام" },
+    "fields": { "sku": "الرمز", "item": "الصنف", "unit": "الوحدة", "onHand": "المتوفر" },
+    "adjust": {
+      "title": "تعديل المخزون",
+      "current": "المتوفر",
+      "quantity": "الكمية",
+      "note": "ملاحظة",
+      "submit": "تطبيق"
+    },
+    "movements": { "title": "الحركات", "empty": "لا توجد حركات بعد" },
+    "reason": {
+      "order_fulfillment": "تنفيذ طلب",
+      "adjustment": "تعديل",
+      "purchase_receipt": "استلام مشتريات",
+      "production": "إنتاج"
+    }
+  },
+  "production": {
+    "title": "الإنتاج",
+    "empty": "لا توجد دفعات بعد",
+    "status": {
+      "pending": "قيد الانتظار",
+      "in_progress": "قيد التنفيذ",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "actions": { "in_progress": "بدء", "completed": "إكمال", "cancelled": "إلغاء" },
+    "filter": { "all": "الكل" },
+    "fields": {
+      "number": "رقم الدفعة",
+      "date": "التاريخ",
+      "inputs": "المدخلات",
+      "outputs": "المخرجات"
+    },
+    "detail": {
+      "title": "الدفعة",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "inputs": "يستهلك (مواد خام)",
+      "outputs": "ينتج (أصناف)",
+      "notes": "ملاحظات"
+    },
+    "new": {
+      "title": "دفعة جديدة",
+      "inputs": "استهلاك مواد خام",
+      "outputs": "إنتاج أصناف",
+      "notes": "ملاحظات",
+      "submit": "إنشاء الدفعة",
+      "summary": "{{inputs}} مدخل، {{outputs}} مخرج"
+    }
+  },
+  "purchasing": {
+    "title": "أوامر الشراء",
+    "empty": "لا توجد أوامر شراء بعد",
+    "kind": { "warehouse": "مستودع", "raw_material": "مواد خام" },
+    "status": {
+      "draft": "مسودة",
+      "pending": "قيد الانتظار",
+      "approved": "معتمد",
+      "received": "مستلم",
+      "cancelled": "ملغى"
+    },
+    "actions": { "approved": "اعتماد", "received": "استلام", "cancelled": "إلغاء" },
+    "filter": { "all": "الكل", "allKinds": "كل الأنواع" },
+    "fields": {
+      "number": "رقم الأمر",
+      "kind": "النوع",
+      "date": "التاريخ",
+      "supplier": "المورد",
+      "items": "الأصناف",
+      "total": "الإجمالي"
+    },
+    "detail": {
+      "title": "أمر شراء",
+      "item": "الصنف",
+      "quantity": "الكمية",
+      "unitPrice": "تكلفة الوحدة",
+      "lineTotal": "إجمالي السطر",
+      "total": "الإجمالي",
+      "notes": "ملاحظات"
+    },
+    "new": {
+      "title": "أمر شراء جديد",
+      "kind": "النوع",
+      "supplier": "المورد",
+      "selectSupplier": "اختر موردًا",
+      "notes": "ملاحظات",
+      "submit": "إنشاء الأمر",
+      "lineCount": "تم اختيار {{n}} صنف"
+    }
+  },
+  "reports": {
+    "title": "التقارير",
+    "from": "من",
+    "to": "إلى",
+    "export": "تصدير CSV",
+    "empty": "لا توجد بيانات لهذه الفترة",
+    "total": "الإجمالي",
+    "note": "التقييم يستخدم المتوفر الحالي × سعر الوحدة في الكتالوج. المبيعات تحسب الطلبات المعتمدة والمكتملة؛ المشتريات تحسب أوامر الشراء المستلمة.",
+    "sales": { "title": "المبيعات" },
+    "purchases": { "title": "المشتريات" },
+    "production": { "title": "الإنتاج" },
+    "itemValuation": { "title": "تقييم الأصناف" },
+    "rawValuation": { "title": "تقييم المواد الخام" },
+    "fields": {
+      "day": "اليوم",
+      "category": "الفئة",
+      "orders": "الطلبات",
+      "revenue": "الإيرادات",
+      "kind": "النوع",
+      "pos": "أوامر الشراء",
+      "spend": "الإنفاق",
+      "batches": "الدفعات",
+      "output": "المخرجات",
+      "item": "الصنف",
+      "onHand": "المتوفر",
+      "unitPrice": "سعر الوحدة",
+      "value": "القيمة"
+    }
+  },
+  "notFound": { "title": "الصفحة غير موجودة", "back": "العودة إلى اللوحة" }
+}

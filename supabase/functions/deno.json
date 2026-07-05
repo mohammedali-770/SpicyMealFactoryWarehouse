@@ -1,0 +1,15 @@
+{
+  "imports": {
+    "zod": "npm:zod@^4",
+    "@supabase/supabase-js": "npm:@supabase/supabase-js@^2",
+    "@std/assert": "jsr:@std/assert@1",
+    "shared/": "../../src/shared/"
+  },
+  "tasks": {
+    "test": "deno test --allow-net --allow-env",
+    "serve:create": "deno run --allow-net --allow-env admin-create-user/index.ts",
+    "serve:update": "deno run --allow-net --allow-env admin-update-user/index.ts"
+  },
+  "fmt": { "useTabs": false, "singleQuote": true, "lineWidth": 100, "semiColons": false },
+  "lint": { "rules": { "tags": ["recommended"] } }
+}

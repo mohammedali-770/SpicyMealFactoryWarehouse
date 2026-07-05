@@ -1,0 +1,305 @@
+{
+  "app": { "name": "Spicy Meal Factory" },
+  "common": {
+    "loading": "Loading…",
+    "signOut": "Sign out",
+    "error": "Something went wrong",
+    "add": "Add",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "actions": "Actions",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "showInactive": "Show inactive",
+    "empty": "Nothing here yet",
+    "moveUp": "Move up",
+    "moveDown": "Move down"
+  },
+  "lang": { "toggle": "العربية", "label": "Switch language" },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "invalid": "Invalid email or password",
+      "emailRequired": "Enter a valid email address",
+      "passwordRequired": "Password must be at least 8 characters"
+    }
+  },
+  "dashboard": {
+    "admin": { "title": "Admin Dashboard", "empty": "No content yet — Phase 1 foundation." },
+    "customer": { "title": "Customer Dashboard", "empty": "No content yet — Phase 1 foundation." },
+    "warehouse_manager": {
+      "title": "Warehouse Manager Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    },
+    "factory_manager": {
+      "title": "Factory Manager Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    },
+    "general_manager": {
+      "title": "General Manager Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    },
+    "accountant": {
+      "title": "Accountant Dashboard",
+      "empty": "No content yet — Phase 1 foundation."
+    }
+  },
+  "admin": {
+    "tabs": {
+      "users": "Users",
+      "branches": "Branches",
+      "items": "Items",
+      "suppliers": "Suppliers",
+      "rawMaterials": "Raw Materials"
+    },
+    "fields": { "name": "Name", "nameAr": "Name (Arabic)" },
+    "errors": {
+      "required": "This field is required",
+      "number": "Enter a number",
+      "nonNegative": "Must be zero or more"
+    },
+    "roles": {
+      "admin": "Admin",
+      "customer": "Customer",
+      "warehouse_manager": "Warehouse Manager",
+      "factory_manager": "Factory Manager",
+      "general_manager": "General Manager",
+      "accountant": "Accountant"
+    },
+    "users": {
+      "title": "Users",
+      "create": "Add user",
+      "edit": "Edit user",
+      "passwordOptional": "leave blank to keep",
+      "roleChangeNote": "Role changes take effect the next time the user signs in.",
+      "fields": {
+        "email": "Email",
+        "fullName": "Full name",
+        "password": "Password",
+        "role": "Role",
+        "branch": "Branch",
+        "active": "Active"
+      },
+      "errors": {
+        "email": "Enter a valid email address",
+        "password": "Password must be at least 6 characters",
+        "fullName": "Full name is required"
+      }
+    },
+    "branches": { "title": "Branches", "fields": { "internalOnly": "Internal only" } },
+    "items": {
+      "title": "Items",
+      "export": "Export",
+      "import": "Import",
+      "importSummary": "Imported {{ok}} row(s), {{errors}} error(s)",
+      "imageUploading": "Uploading image…",
+      "fields": {
+        "sku": "SKU",
+        "category": "Category",
+        "unit": "Unit",
+        "unitPrice": "Unit price",
+        "image": "Image",
+        "stockLevelRequired": "Ask customer for stock level"
+      },
+      "category": { "warehouse": "Warehouse", "factory": "Factory" }
+    },
+    "suppliers": {
+      "title": "Suppliers",
+      "fields": {
+        "contactName": "Contact name",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "notes": "Notes"
+      }
+    },
+    "rawMaterials": { "title": "Raw Materials", "fields": { "supplier": "Supplier" } }
+  },
+  "orders": {
+    "empty": "No orders yet",
+    "title": {
+      "customer": "My Orders",
+      "warehouse": "Warehouse Orders",
+      "factory": "Factory Orders",
+      "gm": "All Orders",
+      "accountant": "All Orders"
+    },
+    "status": {
+      "draft": "Draft",
+      "pending": "Pending",
+      "approved": "Approved",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "actions": {
+      "pending": "Submit",
+      "approved": "Approve",
+      "completed": "Complete",
+      "cancelled": "Cancel"
+    },
+    "filter": { "status": "Status", "all": "All" },
+    "fields": {
+      "number": "Order #",
+      "date": "Date",
+      "branch": "Branch",
+      "items": "Items",
+      "total": "Total"
+    },
+    "detail": {
+      "title": "Order",
+      "item": "Item",
+      "quantity": "Qty",
+      "stockLevel": "Stock level",
+      "unitPrice": "Unit price",
+      "lineTotal": "Line total",
+      "total": "Total",
+      "notes": "Notes",
+      "history": "History",
+      "notePlaceholder": "Add a note (optional)"
+    },
+    "new": {
+      "title": "New Order",
+      "branch": "Branch",
+      "noBranch": "No branch",
+      "notes": "Notes",
+      "submit": "Place order",
+      "lineCount": "{{n}} item(s) selected"
+    }
+  },
+  "nav": {
+    "orders": "Orders",
+    "inventory": "Inventory",
+    "purchasing": "Purchasing",
+    "production": "Production",
+    "reports": "Reports",
+    "admin": "Admin"
+  },
+  "inventory": {
+    "title": "Inventory",
+    "empty": "No warehouse items yet",
+    "emptyRaw": "No raw materials yet",
+    "tabs": { "items": "Items", "raw": "Raw materials" },
+    "fields": { "sku": "SKU", "item": "Item", "unit": "Unit", "onHand": "On hand" },
+    "adjust": {
+      "title": "Adjust stock",
+      "current": "On hand",
+      "quantity": "Quantity",
+      "note": "Note",
+      "submit": "Apply"
+    },
+    "movements": { "title": "Movements", "empty": "No movements yet" },
+    "reason": {
+      "order_fulfillment": "Order fulfillment",
+      "adjustment": "Adjustment",
+      "purchase_receipt": "Purchase receipt",
+      "production": "Production"
+    }
+  },
+  "production": {
+    "title": "Production",
+    "empty": "No batches yet",
+    "status": {
+      "pending": "Pending",
+      "in_progress": "In progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "actions": { "in_progress": "Start", "completed": "Complete", "cancelled": "Cancel" },
+    "filter": { "all": "All" },
+    "fields": { "number": "Batch #", "date": "Date", "inputs": "Inputs", "outputs": "Outputs" },
+    "detail": {
+      "title": "Batch",
+      "item": "Item",
+      "quantity": "Qty",
+      "inputs": "Consumes (raw materials)",
+      "outputs": "Produces (items)",
+      "notes": "Notes"
+    },
+    "new": {
+      "title": "New Batch",
+      "inputs": "Consume raw materials",
+      "outputs": "Produce items",
+      "notes": "Notes",
+      "submit": "Create batch",
+      "summary": "{{inputs}} input(s), {{outputs}} output(s)"
+    }
+  },
+  "purchasing": {
+    "title": "Purchase Orders",
+    "empty": "No purchase orders yet",
+    "kind": { "warehouse": "Warehouse", "raw_material": "Raw material" },
+    "status": {
+      "draft": "Draft",
+      "pending": "Pending",
+      "approved": "Approved",
+      "received": "Received",
+      "cancelled": "Cancelled"
+    },
+    "actions": { "approved": "Approve", "received": "Receive", "cancelled": "Cancel" },
+    "filter": { "all": "All", "allKinds": "All kinds" },
+    "fields": {
+      "number": "PO #",
+      "kind": "Kind",
+      "date": "Date",
+      "supplier": "Supplier",
+      "items": "Items",
+      "total": "Total"
+    },
+    "detail": {
+      "title": "Purchase order",
+      "item": "Item",
+      "quantity": "Qty",
+      "unitPrice": "Unit cost",
+      "lineTotal": "Line total",
+      "total": "Total",
+      "notes": "Notes"
+    },
+    "new": {
+      "title": "New PO",
+      "kind": "Kind",
+      "supplier": "Supplier",
+      "selectSupplier": "Select a supplier",
+      "notes": "Notes",
+      "submit": "Create PO",
+      "lineCount": "{{n}} item(s) selected"
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "from": "From",
+    "to": "To",
+    "export": "Export CSV",
+    "empty": "No data for this range",
+    "total": "Total",
+    "note": "Valuation uses current on-hand × catalog unit price. Sales counts approved and completed orders; purchases count received POs.",
+    "sales": { "title": "Sales" },
+    "purchases": { "title": "Purchases" },
+    "production": { "title": "Production" },
+    "itemValuation": { "title": "Item valuation" },
+    "rawValuation": { "title": "Raw material valuation" },
+    "fields": {
+      "day": "Day",
+      "category": "Category",
+      "orders": "Orders",
+      "revenue": "Revenue",
+      "kind": "Kind",
+      "pos": "POs",
+      "spend": "Spend",
+      "batches": "Batches",
+      "output": "Output",
+      "item": "Item",
+      "onHand": "On hand",
+      "unitPrice": "Unit price",
+      "value": "Value"
+    }
+  },
+  "notFound": { "title": "Page not found", "back": "Back to dashboard" }
+}
